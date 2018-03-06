@@ -54,7 +54,7 @@
 
 			// Help the user learn the controls by providing hints, for example by
 			// bouncing the down arrow when they first encounter a vertical slide
-			controlsTutorial: true,
+			controlsTutorial: false,
 
 			// Determines where controls appear, "edges" or "bottom-right"
 			controlsLayout: 'bottom-right',
@@ -136,7 +136,7 @@
 			autoSlideMethod: null,
 
 			// Enable slide navigation via mouse wheel
-			mouseWheel: false,
+			mouseWheel: true,
 
 			// Apply a 3D roll to links on hover
 			rollingLinks: false,
@@ -251,7 +251,7 @@
 		isChrome,
 
 		// Throttles mouse wheel navigation
-		lastMouseWheelStep = 0,
+		lastMouseWheelStep = 1,
 
 		// Delays updates to the URL due to a Chrome thumbnailer bug
 		writeURLTimeout = 0,
@@ -4699,6 +4699,7 @@
 
 	}
 
+
 	/**
 	 * Handles mouse wheel scrolling, throttled to avoid skipping
 	 * multiple slides.
@@ -4752,7 +4753,7 @@
 	 * Event handler for navigation control buttons.
 	 */
 	function onNavigateLeftClicked( event ) { event.preventDefault(); onUserInput(); navigateLeft(); }
-	function onNavigateRightClicked( event ) { event.preventDefault(); onUserInput(); navigateRight(); }
+	function onNavigateRightClicked( event ) { event.preventDefault(); onUserInput(); navigateNext(); }
 	function onNavigateUpClicked( event ) { event.preventDefault(); onUserInput(); navigateUp(); }
 	function onNavigateDownClicked( event ) { event.preventDefault(); onUserInput(); navigateDown(); }
 	function onNavigatePrevClicked( event ) { event.preventDefault(); onUserInput(); navigatePrev(); }
